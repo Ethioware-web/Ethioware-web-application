@@ -6,13 +6,33 @@ const logoschema=new mongoose.schema({
     data:Buffer,
 });
 const Logo=mongoose.model('Logo',logoschema)
-async function start (){
+async function savelogo (name,path){
+const data= await fs.readFile(path);
 const images= new Logo(
     {
-        name:'logos',
-        data:'binary data',//here we are going to add binary  data of the images 
+        name:name,
+        data:data,
     }
 );
 const check= await images.save();
 }
-start();
+//I assumed the name and the path will be avaliable, and I stored them
+const logos=[{ name:'name the logo',
+path:'path of the logo'},
+{name:'name the logo',
+path:'path of the logo'
+},
+{name:'name the logo',
+path:'path of the logo'
+},
+{name:'name the logo',
+path:'path of the logo'
+},
+{name:'name the logo',
+path:'path of the logo'
+}]
+// each element along with it name and path will be stored
+logos.forEach(logo=>{
+    savelogo(logo.name,logo.path);
+});
+
