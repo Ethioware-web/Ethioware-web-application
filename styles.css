@@ -1,0 +1,97 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #ede6ef;
+    overflow: hidden; /* Hide scrollbars */
+}
+
+.content {
+    text-align: center;
+    width: 100%;
+}
+
+.title {
+    font-size: 3vw; /* Responsive font size */
+    font-weight: bold;
+    color: #2d2728;
+    font-family: sans-serif;
+    margin-bottom: 2vw; /* Responsive margin */
+}
+
+.partner-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #ffffff;
+    padding: 10px 0; /* Some padding for aesthetics */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners */
+    display: flex;
+    justify-content: flex-start; /* Align items to the start (left) */
+}
+
+.partner-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between partner elements */
+    width: 100%;
+    margin: 0; /* Remove margins */
+}
+
+.partner {
+    flex: 0 1 auto; /* Allow partners to shrink but not grow */
+}
+
+.partner img {
+    max-height: 8vw; /* Responsive height */
+    max-width: 150px; /* Ensure images don't get too large */
+    width: auto;
+    display: block;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .title {
+        font-size: 4vw;
+    }
+
+    .partner img {
+        max-height: 10vw;
+        max-width: 120px;
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        font-size: 5vw;
+    }
+
+    .partner img {
+        max-height: 12vw;
+        max-width: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 6vw;
+    }
+
+    .partner img {
+        max-height: 14vw;
+        max-width: 80px;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 7vw;
+    }
+
+    .partner img {
+        max-height: 16vw;
+        max-width: 60px;
+    }
+}
