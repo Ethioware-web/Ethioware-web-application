@@ -14,7 +14,7 @@ body {
 }
 
 .title {
-    font-size: 3vw; /* Decreased font size */
+    font-size: 3vw; 
     font-weight: bold;
     color: #2d2728;
     font-family: sans-serif;
