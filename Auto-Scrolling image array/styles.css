@@ -4,7 +4,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color:rgba(255, 255, 255, 0.884);
+    background-color: rgba(255, 255, 255, 0.884);
     overflow: hidden; 
 }
 
@@ -14,7 +14,7 @@ body {
 }
 
 .title {
-    font-size: 3vw; 
+    font-size: 3vw; /* Decreased font size */
     font-weight: bold;
     color: #2d2728;
     font-family: sans-serif;
@@ -22,85 +22,87 @@ body {
 }
 
 .partner-container {
-    width: 100%;
+    width: 80%; /* Increased size of the container */
+    height: 30vh; /* Increased height of the container */
     overflow: hidden;
     background-color: #ffffff;
-    padding: 10px 0; 
+    padding: 20px; /* Added padding for spacing */
     box-shadow: 1px 2px 4px rgba(1, 1, 0, 0.1);
     border-radius: 10px;
     display: flex;
-    justify-content: flex-start; 
+    justify-content: space-between; /* Adjusted alignment */
+    margin: 0 auto; /* Center the container */
 }
 
 .partner-wrapper {
     display: flex;
     align-items: center;
-    gap: 20px; 
+    gap: 30px; 
     width: fit-content;
     white-space: nowrap;
+    margin: 0 auto; /* Center the wrapper */
+    animation: scroll 20s linear infinite; /* Adjusted animation duration */
 }
 
 .partner {
     flex: 0 1 auto; 
+    position: relative; /* Enable hover effect */
 }
 
 .partner img {
-    max-height: 8vw;
-    max-width: 150px; 
+    max-height: 25vh; /* Increased image size */
+    max-width: 250px; /* Increased image size */
     width: auto;
     display: block;
+    transition: transform 0.3s ease; /* Smooth transition */
 }
 
-/* Responsive design */
-@media (max-width: 1200px) {
-    .title {
-        font-size: 4vw;
-    }
-
-    .partner img {
-        max-height: 10vw;
-        max-width: 120px;
-    }
+.partner:hover img {
+    transform: scale(1.2); /* Zoom effect on hover */
+    animation-play-state: paused; /* Pause animation on hover */
 }
 
-@media (max-width: 992px) {
-    .title {
-        font-size: 5vw;
-    }
-
-    .partner img {
-        max-height: 12vw;
-        max-width: 100px;
-    }
-}
-
-@media (max-width: 768px) {
-    .title {
-        font-size: 6vw;
-    }
-
-    .partner img {
-        max-height: 14vw;
-        max-width: 80px;
-    }
-}
-
-@media (max-width: 576px) {
-    .title {
-        font-size: 7vw;
-    }
-
-    .partner img {
-        max-height: 16vw;
-        max-width: 60px;
-    }
-}
-
+/* Animation */
 @keyframes scroll {
     from {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-50%);
+        transform: translateX(-20%);
+    }
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .title {
+        font-size: 3vw;
+    }
+}
+
+@media (max-width: 992px) {
+    .title {
+        font-size: 4vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 5vw;
+    }
+
+    .partner img {
+        max-height: 12vh;
+        max-width: 150px;
+    }
+}
+
+@media (max-width: 576px) {
+    .title {
+        font-size: 6vw;
+    }
+
+    .partner img {
+        max-height: 10vh;
+        max-width: 120px;
     }
 }
