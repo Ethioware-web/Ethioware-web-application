@@ -3,6 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const clone = wrapper.innerHTML;
     wrapper.innerHTML = clone+clone+clone;
     const contentWidth = wrapper.scrollWidth /2;
-    const animationDuration = contentWidth / 50; 
+    const animationDuration = contentWidth / 20; 
     wrapper.style.animation = `scroll ${animationDuration}s linear infinite`;
 });
